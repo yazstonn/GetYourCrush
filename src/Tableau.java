@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Tableau {
@@ -5,6 +6,8 @@ public class Tableau {
 	protected String uneligne = "+-----";
 	protected String unecolonne = "";
 
+	//localisationVide sous forme Ligne/Colonne
+		protected static ArrayList<Integer> localisationVide = new ArrayList<Integer>();
 	public Tableau() {
 		remplissageBonbons();
 	}
@@ -12,7 +15,40 @@ public class Tableau {
 	public Bonbons[][] getTab() {
 		return bonbons;
 	}
-
+	public void detectionVide(){
+		for(int ligne=0; ligne<bonbons.length; ligne++){
+			for(int colonne=0; colonne<bonbons[1].length; colonne++){
+				if(bonbons[ligne][colonne].id == 0){
+					localisationVide.add(ligne);
+					localisationVide.add(colonne);
+				}
+			}
+		}
+		pluie();
+	}
+	public void pluie(){
+		System.out.println(localisationVide.get(1));
+		while(!localisationVide.isEmpty()){
+			for(int i=localisationVide.get(0); i>=0; i--){
+				if(i>0)
+					bonbons[i][localisationVide.get(1)] = bonbons[i-1][localisationVide.get(1)];
+				if(i==0)
+					bonbons[i][localisationVide.get(1)] = new BonbonStandard().getBb(new Random().nextInt(4)+1);
+				System.out.println(localisationVide.get(0));
+			}
+			localisationVide.remove(0);//Ligne
+			localisationVide.remove(0);//Colonne			
+		}		
+	}
+	public void disparitionBonbon(int ordonnee, int abscisse){
+		try {
+			Thread.sleep(600);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		bonbons[ordonnee][abscisse]=new Bonbons(0, " "); //O identifiant NULL
+	}
 	public void remplissageBonbons() {
 		Random rnd = new Random();
 		BonbonStandard bb = new BonbonStandard();
