@@ -5,6 +5,7 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Tableau.remplissageBonbons();
 		Tableau.afficheTableau();
 		//System.out.println("nb possibilitées: "+ Possibilitees(Tableau.bonbons));
 		//System.out.println("Destruction verticale: " + new bonbonSpecifique(true,5));
