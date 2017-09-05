@@ -10,4 +10,12 @@ public class BonbonStandard{
 	public Bonbons getBb(int id){
 		return typeBonbons[id-1];
 	}
+	public boolean compare(Bonbons bb1,Bonbons bb2){
+		if(bb1.getId() == bb2.getId()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
