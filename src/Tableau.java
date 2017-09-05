@@ -14,7 +14,7 @@ public class Tableau {
 			}
 		}
 	}
-	public static void changerBonbon(int ordonnee, int abscisse, Bonbons valeur){
+	public static void setBonbon(int ordonnee, int abscisse, Bonbons valeur){
 		bonbons[ordonnee][abscisse]=valeur;
 	}
 	public static void afficheTableau(){
@@ -41,6 +41,21 @@ public class Tableau {
 			System.out.println();
 		}
 	}
+	
+	public static Bonbons getBonbons(int ordonnee, int abscisse){
+		return bonbons[ordonnee][abscisse];
+	}
+	
+	public boolean decomptePossibilite(){
+		return true;
+//		int cpt = 0;
+//		for(int i = 0; i<bonbons.length; i++){
+//			
+//		}
+		
+	}
+	
+	
 	public static void main(String[] args) {
 		remplissageBonbons();
 		afficheTableau();
