@@ -7,16 +7,30 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		Tableau tab = new Tableau();
 		tab.remplissageBonbons();
-		tab.afficheTableau();
-		//System.out.println("nb possibilitées: "+ Possibilitees(Tableau.bonbons));
-		//System.out.println("Destruction verticale: " + new bonbonSpecifique(true,5));
-		//System.out.println("Destruction horizontale : " + new bonbonSpecifique(false,6));
-		System.out.println("(Colonne:Ligne)");
-		System.out.println("Entrez une coordonnées de départ: ");
-		String repCordDeb = sc.nextLine();
-		System.out.println("Entrez une coordonnées de fin:");
-		String repCordFin = sc.nextLine();
-		System.out.println(Possible(tab.getTab(),repCordDeb,repCordFin));
+		boolean finDuGame = false;
+		int nbCoup = 10;
+		int coupActu = 0;
+		while(!finDuGame){
+			tab.afficheTableau();
+			System.out.println("Coups restants: "+ (nbCoup-coupActu));
+			System.out.println("(Colonne:Ligne)");
+			System.out.println("Entrez une coordonnées de départ: ");
+			String repCordDeb = sc.nextLine();
+			System.out.println("Entrez une coordonnées de fin:");
+			String repCordFin = sc.nextLine();
+			//effectuer modif du coup
+			
+			if(Possible(tab.getTab(),repCordDeb,repCordFin)){
+				//modifier tableau
+				coupActu++;
+				
+			}
+			if(coupActu == 10){
+				finDuGame = true;
+			}
+			System.out.flush();
+			
+		}
 	}
 	public static boolean Possible(Bonbons[][] bbs,String CDeb,String CFin){
 		int Hdeb=0,Hfin=0,Vdeb=0,Vfin=0,cpt;
@@ -59,8 +73,8 @@ public class Main {
 				if(Hdeb+i < 6){
 					if(!bbs[Vdeb][Hdeb].compare(bbs[Vdeb][Hdeb+i])){
 						result = false;
-						System.out.println("id1:"+bbs[Vdeb][Hdeb+i]+"\nid2:"+bbs[Vdeb][Hdeb+1]);
-						System.out.println("isV:"+isV+"\ntour n:"+i+"\nresult:"+result+"\nvdeb+i+1:"+Vdeb+i+1);
+						//System.out.println("id1:"+bbs[Vdeb][Hdeb+i]+"\nid2:"+bbs[Vdeb][Hdeb+1]);
+						//System.out.println("isV:"+isV+"\ntour n:"+i+"\nresult:"+result+"\nvdeb+i+1:"+Vdeb+i+1);
 					}
 				}
 			}
@@ -70,8 +84,8 @@ public class Main {
 				if(Vdeb+i < 6){
 					if(!bbs[Vdeb][Hdeb].compare(bbs[Vdeb+i][Hdeb])){
 						result = false;
-						System.out.println("id1:"+bbs[Vdeb+i][Hdeb]+"\nid2:"+bbs[Vdeb+1][Hdeb]);
-						System.out.println("isV:"+isV+"\ntour n:"+i+"\nresult:"+result+"\nhdeb+i+1:"+Hdeb+i+1);
+						//System.out.println("id1:"+bbs[Vdeb+i][Hdeb]+"\nid2:"+bbs[Vdeb+1][Hdeb]);
+						//System.out.println("isV:"+isV+"\ntour n:"+i+"\nresult:"+result+"\nhdeb+i+1:"+Hdeb+i+1);
 					}
 				}
 			}
