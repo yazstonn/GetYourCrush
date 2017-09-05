@@ -1,6 +1,7 @@
 
 public class Bonbons {
 	protected int id;
+	protected int score;
 	protected String symbol;
 	protected boolean spec;
 	public Bonbons(int id){
@@ -14,6 +15,18 @@ public class Bonbons {
 		this.id = id;
 		this.symbol = symb;
 		this.spec = spe;
+	}
+	public Bonbons(int id,String symb,boolean spe,int sc){
+		this.id = id;
+		this.symbol = symb;
+		this.spec = spe;
+		this.score = sc;
+	}
+	public void setScore(int sc){
+		this.score = sc;
+	}
+	public int getScore(){
+		return this.score;
 	}
 	public void setId(int id){
 		this.id = id;
