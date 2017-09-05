@@ -1,8 +1,7 @@
 
 public class Tableau {
-	protected static char lebonbon='O';
+	protected static Bonbons[][] bonbons = new Bonbons[6][6];
 	protected static String uneligne="+-----";
-	protected static String unecolonne="|  "+lebonbon+"  ";
 	
 	public static void main(String[] args) {
 		for (int i = 0; i < 13; i++) {
@@ -15,9 +14,9 @@ public class Tableau {
 					}
 				}else{
 					if(j==5){
-						System.out.print("|  "+lebonbon+"  |");
+						System.out.print("|  "+bonbons[i][j]+"  |");
 					}else{
-						System.out.print(unecolonne);
+						System.out.print("|  "+bonbons[i][j]+"  ");
 					}
 				}
 			}
