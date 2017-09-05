@@ -23,6 +23,20 @@ public class Main {
 			if(Possible(tab.getTab(),repCordDeb,repCordFin)){
 				//modifier tableau
 				coupActu++;
+				//Colonne
+				if((Integer.parseInt(repCordFin.substring(0, 1))-(Integer.parseInt(repCordDeb.substring(0, 1)))==0)){
+					for(int i=(Integer.parseInt(repCordDeb.substring(2, 3))); i<=(Integer.parseInt(repCordDeb.substring(2, 3)))+(Integer.parseInt(repCordFin.substring(2, 3))-(Integer.parseInt(repCordDeb.substring(2, 3)))); i++){
+						tab.disparitionBonbon(i, Integer.parseInt(repCordDeb.substring(0, 1)));
+					}
+				}else{
+				//Ligne
+					for(int i=(Integer.parseInt(repCordDeb.substring(0, 1))); i<=(Integer.parseInt(repCordDeb.substring(0, 1)))+(Integer.parseInt(repCordFin.substring(0, 1))-(Integer.parseInt(repCordDeb.substring(0, 1)))); i++){
+						tab.disparitionBonbon(Integer.parseInt(repCordDeb.substring(2, 3)), i);
+					}
+					
+				}
+				tab.detectionVide();
+
 				
 			}
 			if(coupActu == 10){
