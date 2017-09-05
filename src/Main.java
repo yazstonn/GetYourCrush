@@ -92,7 +92,4 @@ public class Main {
 		}
 		return result;
 	}
-	public static boolean blocage(Bonbons[][] bbs){
-		return false;
-	}
 }
