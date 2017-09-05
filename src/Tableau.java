@@ -21,6 +21,7 @@ public class Tableau {
 		Random rnd = new Random();
 		BonbonStandard bb = new BonbonStandard();
 		int k=0;
+		remplissageBonbons();
 		for (int i = 0; i < 13; i++) {
 			for (int j = 0; j < 6; j++) {
 				if(i%2==0){
