@@ -1,11 +1,11 @@
 
-public abstract class BonBons {
+public abstract class Bonbons {
 	protected int id;
 	protected String symbol;
-	public BonBons(int id){
+	public Bonbons(int id){
 		this.id = id;
 	}
-	public BonBons(int id,String symb){
+	public Bonbons(int id,String symb){
 		this.id = id;
 		this.symbol = symb;
 	}
