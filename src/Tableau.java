@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Tableau {
-	private Bonbons[][] bonbons = new Bonbons[6][6];
+	protected int n=8;
+	private Bonbons[][] bonbons = new Bonbons[n][n];
 	protected String uneligne = "+-----";
 	protected String unecolonne = "";
 
@@ -52,8 +53,8 @@ public class Tableau {
 	public void remplissageBonbons() {
 		Random rnd = new Random();
 		BonbonStandard bb = new BonbonStandard();
-		for (int i = 0; i < 6; i++) {
-			for (int j = 0; j < 6; j++) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
 				bonbons[i][j] = bb.getBb(rnd.nextInt(4) + 1);
 			}
 		}
@@ -67,16 +68,16 @@ public class Tableau {
 		Random rnd = new Random();
 		BonbonStandard bb = new BonbonStandard();
 		int k = 0;
-		for (int i = 0; i < 13; i++) {
-			for (int j = 0; j < 6; j++) {
+		for (int i = 0; i < n*2+1; i++) {
+			for (int j = 0; j < n; j++) {
 				if (i % 2 == 0) {
-					if (j == 5) {
+					if (j == n-1) {
 						System.out.print("+-----+");
 					} else {
 						System.out.print(uneligne);
 					}
 				} else {
-					if (j == 5) {
+					if (j == n-1) {
 						System.out.print("|  " + bonbons[i / 2][j] + "  |");
 					} else {
 						unecolonne = "|  " + bonbons[i / 2][j] + "  ";
