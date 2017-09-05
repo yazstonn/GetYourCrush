@@ -11,7 +11,7 @@ public class Main {
 		//System.out.println("nb possibilitées: "+ Possibilitees(Tableau.bonbons));
 		//System.out.println("Destruction verticale: " + new bonbonSpecifique(true,5));
 		//System.out.println("Destruction horizontale : " + new bonbonSpecifique(false,6));
-		System.out.println("(horizontale:verticale");
+		System.out.println("(Colonne:Ligne)");
 		System.out.println("Entrez une coordonnées de départ: ");
 		String repCordDeb = sc.nextLine();
 		System.out.println("Entrez une coordonnées de fin:");
