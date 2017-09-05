@@ -55,7 +55,7 @@ public class Main {
 		boolean isV = Hdeb==Hfin;
 		boolean result = true;
 		if(!isV){
-			for(int i=0;i<Hfin+1;i++){
+			for(int i=0;i<Hfin;i++){
 				if(Hdeb+i < 6){
 					if(!bbs[Vdeb][Hdeb].compare(bbs[Vdeb][Hdeb+i])){
 						result = false;
@@ -66,7 +66,7 @@ public class Main {
 			}
 		}
 		else{
-			for(int i=0;i<Vfin+1;i++){
+			for(int i=0;i<Vfin;i++){
 				if(Vdeb+i < 6){
 					if(!bbs[Vdeb][Hdeb].compare(bbs[Vdeb+i][Hdeb])){
 						result = false;
