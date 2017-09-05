@@ -50,6 +50,9 @@ public class Bonbons {
 	public boolean getSpec(){
 		return spec;
 	}
+	public boolean compare(Bonbons bb){
+		return this.id == bb.getId();
+	}
 	public String toString(){
 		if(symbol != null){
 			return symbol;	

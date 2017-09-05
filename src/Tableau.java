@@ -55,7 +55,7 @@ public class Tableau {
 	public Bonbons getBonbons(int ordonnee, int abscisse) {
 		return bonbons[ordonnee][abscisse];
 	}
-
+	
 	private boolean verifHorizontal() {
 		Bonbons tmp = null;
 		boolean verif = false;
