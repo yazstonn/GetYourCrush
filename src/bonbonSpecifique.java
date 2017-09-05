@@ -5,17 +5,18 @@ public class bonbonSpecifique extends Bonbons {
 	
 	
 	public bonbonSpecifique(boolean orientation, int id){
+		//id = 5 Verticale | id=6 Horizontale
 		super(id, "", true);
 		if(orientation){
-			super.setSymbol("U+0298");
+			super.setSymbol("\u04E8");
 		}else
-			super.setSymbol("U+04E8");
+			super.setSymbol("\u0298");
 		
 		this.orientation = orientation;
 	}
 
 
-	public boolean isOrientation() {
+	public boolean isVerticale() {
 		return orientation;
 	}
 	

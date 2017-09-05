@@ -4,6 +4,7 @@ public class Bonbons {
 	protected int score;
 	protected String symbol;
 	protected boolean spec;
+	protected Coordonnees cord;
 	public Bonbons(int id){
 		this.id = id;
 	}
@@ -21,6 +22,12 @@ public class Bonbons {
 		this.symbol = symb;
 		this.spec = spe;
 		this.score = sc;
+	}
+	public void setCord(Coordonnees coord){
+		this.cord = coord;
+	}
+	public Coordonnees getCord(){
+		return this.cord;
 	}
 	public void setScore(int sc){
 		this.score = sc;
