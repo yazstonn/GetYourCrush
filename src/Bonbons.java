@@ -1,14 +1,8 @@
 
-public abstract class Bonbons {
+public class Bonbons {
 	protected int id;
 	protected String symbol;
-	public Bonbons(int id){
-		this.id = id;
-	}
-	public Bonbons(int id,String symb){
-		this.id = id;
-		this.symbol = symb;
-	}
+	protected boolean spec;
 	public void setId(int id){
 		this.id = id;
 	}
@@ -17,6 +11,12 @@ public abstract class Bonbons {
 	}
 	public void setSymbol(String symb){
 		this.symbol = symb;
+	}
+	public void setSpec(boolean sp){
+		this.spec = sp;
+	}
+	public boolean getSpec(){
+		return spec;
 	}
 	public String toString(){
 		if(symbol != null){
