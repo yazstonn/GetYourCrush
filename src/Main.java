@@ -1,7 +1,7 @@
 
 public class Main {
 	public static void main(String[] args) {
-		Tableau.tableauRandom();
+		Tableau.afficheTableau();
 		//System.out.println("nb possibilitées: "+ Possibilitees(Tableau.bonbons));
 		System.out.println("Destruction verticale: " + new bonbonSpecifique(true,5));
 		System.out.println("Destruction horizontale : " + new bonbonSpecifique(false,6));

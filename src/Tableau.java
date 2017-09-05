@@ -17,7 +17,7 @@ public class Tableau {
 	public static void changerBonbon(int ordonnee, int abscisse, Bonbons valeur){
 		bonbons[ordonnee][abscisse]=valeur;
 	}
-	public static void tableauRandom(){
+	public static void afficheTableau(){
 		Random rnd = new Random();
 		BonbonStandard bb = new BonbonStandard();
 		int k=0;
@@ -43,6 +43,6 @@ public class Tableau {
 	}
 	public static void main(String[] args) {
 		remplissageBonbons();
-		tableauRandom();
+		afficheTableau();
 	}
 }
