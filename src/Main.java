@@ -11,6 +11,7 @@ public class Main {
 		boolean activationBonbonSpec = false;
 		int nbCoup = 10;
 		int coupActu = 0;
+		Score score = new Score();
 		int n = 0;
 		String repCordDeb, repCordFin, tailleTab;
 		boolean tailleOk;
@@ -29,6 +30,7 @@ public class Main {
 		while(!finDuGame){
 			tab.setN(n);
 			tab.afficheTableau();
+			score.afficheScore();
 			System.out.println("Coups restants: "+ (nbCoup-coupActu));
 			System.out.println("(Colonne:Ligne)");
 			boolean scanOk = true;
@@ -54,23 +56,37 @@ public class Main {
 			//effectuer modif du coup
 			
 			if(Possible(tab,repCordDeb,repCordFin)){
-				//compteur bonbon spec
+				
+				String[] coupDeb = repCordDeb.split(":");
+				String[] coupFin = repCordFin.split(":");
+				
+				//compteur bonbon spec + score
 				int compteur = 0;
 				//modifier tableau
 				coupActu++;
 				//Colonne
-				if((Integer.parseInt(repCordFin.substring(0, 1))-(Integer.parseInt(repCordDeb.substring(0, 1)))==0)){
-					for(int i=(Integer.parseInt(repCordDeb.substring(2, 3))); i<=(Integer.parseInt(repCordDeb.substring(2, 3)))+(Integer.parseInt(repCordFin.substring(2, 3))-(Integer.parseInt(repCordDeb.substring(2, 3)))); i++){
+				if((Integer.parseInt(coupFin[0])-(Integer.parseInt(coupDeb[0]))==0)){
+					for(int i=(Integer.parseInt(coupDeb[1])); i<=(Integer.parseInt(coupDeb[1]))
+							+(Integer.parseInt(coupFin[1])-(Integer.parseInt(coupDeb[1]))); i++){
+						
 						tab.disparitionBonbon(i, Integer.parseInt(repCordDeb.substring(0, 1)));
 						compteur++;
+						
 					}
 				}else{
 				//Ligne
-					for(int i=(Integer.parseInt(repCordDeb.substring(0, 1))); i<=(Integer.parseInt(repCordDeb.substring(0, 1)))+(Integer.parseInt(repCordFin.substring(0, 1))-(Integer.parseInt(repCordDeb.substring(0, 1)))); i++){
+					for(int i=(Integer.parseInt(coupDeb[0])); i<=(Integer.parseInt(coupDeb[0]))
+							+(Integer.parseInt(coupFin[0])-(Integer.parseInt(coupDeb[0]))); i++){
+						
 						tab.disparitionBonbon(Integer.parseInt(repCordDeb.substring(2, 3)), i);
 						compteur++;
+						
 					}
 					
+				}
+				if (compteur >= 3) {
+					System.out.println(new BonbonStandard().getBb(1).getScore()+"");
+					score.incr(compteur, new BonbonStandard().getBb(1));
 				}
 				if(compteur >= 5)
 					activationBonbonSpec = true;
