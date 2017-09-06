@@ -92,8 +92,10 @@ public class Main {
 				}
 				if(compteur >= 5)
 					activationBonbonSpec = true;
+				
+				tab.afficheTableau();
 				try {
-					Thread.sleep(300);
+					Thread.sleep(500);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

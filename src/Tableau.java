@@ -28,21 +28,20 @@ public class Tableau {
 		pluie();
 	}
 	public void pluie(){
-		System.out.println(localisationVide.get(1));
+		//System.out.println(localisationVide.get(1));
 		while(!localisationVide.isEmpty()){
 			for(int i=localisationVide.get(0); i>=0; i--){
 				if(i>0)
 					bonbons[i][localisationVide.get(1)] = bonbons[i-1][localisationVide.get(1)];
 				if(i==0)
 					bonbons[i][localisationVide.get(1)] = new BonbonStandard().getBb(new Random().nextInt(4)+1);
-				System.out.println(localisationVide.get(0));
+				//System.out.println(localisationVide.get(0));
 			}
 			localisationVide.remove(0);//Ligne
 			localisationVide.remove(0);//Colonne			
 		}		
 	}
 	public void disparitionBonbon(int ordonnee, int abscisse){
-		
 		bonbons[ordonnee][abscisse]=new Bonbons(0, " "); //O identifiant NULL
 	}
 	public void remplissageBonbons() {
