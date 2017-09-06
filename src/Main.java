@@ -32,6 +32,8 @@ public class Main {
 		tab.setN(n);
 		while (!finDuGame) {
 			tab.siBlocage();
+
+			System.out.println("\nTour suivant: ");
 			tab.afficheTableau();
 			score.afficheScore();
 			System.out.println("Coups restants: " + (nbCoup - coupActu));
@@ -105,7 +107,6 @@ public class Main {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("\nTour suivant: ");
 				tab.detectionVide();
 				System.out.println();
 
@@ -113,7 +114,7 @@ public class Main {
 			if (coupActu >= 10) {
 				finDuGame = true;
 			}
-			System.out.flush();
+			//System.out.flush();
 
 		}
 	}
