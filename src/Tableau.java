@@ -59,7 +59,12 @@ public class Tableau {
 			}
 		}
 	}
-
+	public void setN(int a){
+		this.n=a;
+	}
+	public int getN(){
+		return this.n;
+	}
 	public void setBonbon(int ordonnee, int abscisse, Bonbons valeur) {
 		bonbons[ordonnee][abscisse] = valeur;
 	}
