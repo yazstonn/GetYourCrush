@@ -88,7 +88,6 @@ public class Main {
 
 				}
 				if (compteur >= 3) {
-					System.out.println(new BonbonStandard().getBb(1).getScore() + "");
 					score.incr(compteur, new BonbonStandard().getBb(1));
 				}
 				if (compteur >= 5) {
