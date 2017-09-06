@@ -17,7 +17,7 @@ public class Main {
 		boolean tailleOk;
 		do{
 			tailleOk = true;
-			System.out.println("Taille du tableau: (+ de 6)");
+			System.out.println("Taille du tableau: (6,7 ou 8)");
 			tailleTab = sc.nextLine();
 			try{
 				n = Integer.parseInt(tailleTab);
@@ -25,7 +25,7 @@ public class Main {
 				System.out.println("Erreur de saisie !");
 				tailleOk = false;
 			}
-			tailleOk = n >= 6;
+			tailleOk = n >= 6 && n<= 8;
 		}while(!tailleOk);
 		while(!finDuGame){
 			tab.setN(n);
