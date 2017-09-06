@@ -18,7 +18,7 @@ public class Score {
 			//C-C-C-C-COMBO
 			double scTmp = bb.getScore()*3;
 			for(int i=nbbonbon;i>3;i--){
-				scTmp = scTmp*1.420;
+				scTmp = scTmp*1.42;
 			}
 			//FATALITY
 			score+=scTmp;
