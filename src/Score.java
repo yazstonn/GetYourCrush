@@ -1,4 +1,3 @@
-
 public class Score {
 	
 	private double score;
@@ -25,7 +24,13 @@ public class Score {
 		}
 		
 	}
-	public void incr(int nbbonbon,Bonbons bb,bonbonSpecifique bbs){
+	
+	public void afficheScore(){
+		System.out.println("Score : "+(int)score);
+	}
+	
+	
+	public void incr(int nbbonbon,bonbonSpecifique bbs){
 	
 		
 	}
