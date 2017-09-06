@@ -42,12 +42,7 @@ public class Tableau {
 		}		
 	}
 	public void disparitionBonbon(int ordonnee, int abscisse){
-		try {
-			Thread.sleep(600);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		bonbons[ordonnee][abscisse]=new Bonbons(0, " "); //O identifiant NULL
 	}
 	public void remplissageBonbons() {
