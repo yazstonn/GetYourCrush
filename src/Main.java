@@ -11,9 +11,22 @@ public class Main {
 		boolean activationBonbonSpec = false;
 		int nbCoup = 10;
 		int coupActu = 0;
-		String repCordDeb;
-		String repCordFin;
+		int n = 0;
+		String repCordDeb, repCordFin, tailleTab;
+		boolean tailleOk;
+		do{
+			tailleOk = true;
+			System.out.println("Taille du tableau: ");
+			tailleTab = sc.nextLine();
+			try{
+				n = Integer.parseInt(tailleTab);
+			}catch(NumberFormatException e){
+				System.out.println("Erreur de saisie !");
+				tailleOk = false;
+			}
+		}while(!tailleOk);
 		while(!finDuGame){
+			tab.setN(n);
 			tab.afficheTableau();
 			System.out.println("Coups restants: "+ (nbCoup-coupActu));
 			System.out.println("(Colonne:Ligne)");
@@ -39,7 +52,7 @@ public class Main {
 			}while(!scanOk);
 			//effectuer modif du coup
 			
-			if(Possible(tab.getTab(),repCordDeb,repCordFin)){
+			if(Possible(tab,repCordDeb,repCordFin)){
 				//compteur bonbon spec
 				int compteur = 0;
 				//modifier tableau
@@ -91,7 +104,7 @@ public class Main {
 		}
 		return result;
 	}
-	public static boolean Possible(Bonbons[][] bbs,String CDeb,String CFin){
+	public static boolean Possible(Tableau tab,String CDeb,String CFin){
 		int Hdeb=0,Hfin=0,Vdeb=0,Vfin=0,cpt;
 		char c;
 		boolean endDeb = false;
@@ -124,8 +137,11 @@ public class Main {
 		//check si coup is ok
 		//check si cord dans tab
 		boolean result = true;
-		if(Hfin > bbs[1].length || Hdeb > bbs[1].length || Vdeb > bbs[0].length || Vfin > bbs[0].length){
+		int n = tab.getN();
+		Bonbons[][] bbs = tab.getTab();
+		if(Hfin > n || Hdeb > n || Vdeb > n || Vfin > n){
 			result = false;
+			System.out.println("Coordonnées invalides !");
 		}
 		else{
 			boolean isV = Hdeb==Hfin;

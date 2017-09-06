@@ -156,4 +156,11 @@ public class Tableau {
 		remplissageBonbons();
 		afficheTableau();
 	}
+	
+	public void setN(int taille){
+		this.n = taille;
+	}
+	public int getN(){
+		return this.n;
+	}
 }
