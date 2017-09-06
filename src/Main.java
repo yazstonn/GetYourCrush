@@ -27,8 +27,10 @@ public class Main {
 			}
 			tailleOk = n >= 6 && n<= 8;
 		}while(!tailleOk);
+
+		tab.setN(n);
 		while(!finDuGame){
-			tab.setN(n);
+			tab.siBlocage();
 			tab.afficheTableau();
 			score.afficheScore();
 			System.out.println("Coups restants: "+ (nbCoup-coupActu));
