@@ -68,18 +68,35 @@ public class Tableau {
 		Random rnd = new Random();
 		BonbonStandard bb = new BonbonStandard();
 		int k = 0;
+		String nString = Integer.toString(n);
+		int espaces = nString.length();
+		System.out.print(" ");		
+		for (int j = 0; j < n; j++) {			
+			System.out.print("     " + j);
+		}
+		System.out.println();
 		for (int i = 0; i < n*2+1; i++) {
 			for (int j = 0; j < n; j++) {
+				if (i == 0) {
+					
+				}
 				if (i % 2 == 0) {
-					if (j == n-1) {
-						System.out.print("+-----+");
+					if (j == 0) {
+						for (int x = 0; x <= espaces + 1; x++) {
+							System.out.print(" ");
+						}
+					}
+					if (j == n-1) {						
+						System.out.print("+-----+");					
 					} else {
 						System.out.print(uneligne);
 					}
 				} else {
 					if (j == n-1) {
 						System.out.print("|  " + bonbons[i / 2][j] + "  |");
-					} else {
+					} else if (j == 0) {
+						System.out.print(" " + i/2 + " |  " + bonbons[i / 2][j] + "  ");
+					} else 	{
 						unecolonne = "|  " + bonbons[i / 2][j] + "  ";
 						System.out.print(unecolonne);
 					}
@@ -155,12 +172,5 @@ public class Tableau {
 	public void main() {
 		remplissageBonbons();
 		afficheTableau();
-	}
-	
-	public void setN(int taille){
-		this.n = taille;
-	}
-	public int getN(){
-		return this.n;
 	}
 }
