@@ -110,7 +110,7 @@ public class Main {
 				System.out.println();
 
 			}
-			if (coupActu == 10) {
+			if (coupActu >= 10) {
 				finDuGame = true;
 			}
 			System.out.flush();
