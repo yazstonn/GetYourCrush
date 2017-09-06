@@ -97,7 +97,7 @@ public class Main {
 					tab.setBonbon(Integer.parseInt(coupDeb[1]),
 							Integer.parseInt(coupDeb[0]), bbSpec);
 				}
-
+				System.out.println();
 				tab.afficheTableau();
 				try {
 					Thread.sleep(500);
@@ -105,7 +105,9 @@ public class Main {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				System.out.println("\nTour suivant: ");
 				tab.detectionVide();
+				System.out.println();
 
 			}
 			if (coupActu == 10) {
