@@ -8,6 +8,7 @@ public class Main {
 		Tableau tab = new Tableau();
 		tab.remplissageBonbons();
 		boolean finDuGame = false;
+		boolean activationBonbonSpec = false;
 		int nbCoup = 10;
 		int coupActu = 0;
 		while(!finDuGame){
@@ -21,20 +22,27 @@ public class Main {
 			//effectuer modif du coup
 			
 			if(Possible(tab.getTab(),repCordDeb,repCordFin)){
+				//compteur bonbon spec
+				int compteur = 0;
 				//modifier tableau
 				coupActu++;
 				//Colonne
 				if((Integer.parseInt(repCordFin.substring(0, 1))-(Integer.parseInt(repCordDeb.substring(0, 1)))==0)){
 					for(int i=(Integer.parseInt(repCordDeb.substring(2, 3))); i<=(Integer.parseInt(repCordDeb.substring(2, 3)))+(Integer.parseInt(repCordFin.substring(2, 3))-(Integer.parseInt(repCordDeb.substring(2, 3)))); i++){
 						tab.disparitionBonbon(i, Integer.parseInt(repCordDeb.substring(0, 1)));
+						compteur++;
 					}
 				}else{
 				//Ligne
 					for(int i=(Integer.parseInt(repCordDeb.substring(0, 1))); i<=(Integer.parseInt(repCordDeb.substring(0, 1)))+(Integer.parseInt(repCordFin.substring(0, 1))-(Integer.parseInt(repCordDeb.substring(0, 1)))); i++){
 						tab.disparitionBonbon(Integer.parseInt(repCordDeb.substring(2, 3)), i);
+						compteur++;
 					}
 					
 				}
+				if(compteur >= 5)
+					activationBonbonSpec = true;
+				
 				tab.detectionVide();
 
 				
